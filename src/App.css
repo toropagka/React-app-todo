@@ -30,7 +30,7 @@ h1 {
   text-transform: uppercase;
 }
 
-.input-wrapper {
+.create-input-wrapper {
   margin: 3.5rem;
 }
 
@@ -38,18 +38,18 @@ h1 {
   margin-bottom: 2.5rem;
 }
 
-.todo {
+.todo-item {
   display: flex;
   justify-content: center;
   align-items: flex-start;
 }
 
-input {
+.create-input {
   width: 450px;
   padding: 0.8em;
 }
 
-input:focus {
+.create-input:focus {
   outline: none;
 }
 
@@ -61,7 +61,7 @@ button {
   letter-spacing: 0.1rem;
 }
 
-input,
+.create-input,
 button {
   font-size: 1em;
   appearance: none;
@@ -75,10 +75,10 @@ button {
   border-left: none;
 }
 
-.delete-button {
+.item--delete {
   color: #fe6a6a;
 }
-.edit-button {
+.item--edit {
   color: #4975ef;
 }
 
@@ -88,7 +88,7 @@ ul {
   margin-bottom: 0px;
 }
 
-li {
+.item-text {
   width: 450px;
   padding: 0.85em;
   text-align: left;
@@ -99,13 +99,23 @@ li {
   border-left: 5px solid #cf972e;
 }
 
-li:last-child {
+.item-text:last-child {
   margin-bottom: 0px;
 }
 
-.empty {
+.item-text--completed {
+  text-decoration: line-through;
+  background: #98bdbc;
+}
+.todo-list--empty {
   font-size: 20px;
   font-weight: 400;
   color: #cf972e;
   letter-spacing: 0.2rem;
+}
+
+.item-checkbox {
+  height: 45px;
+  width: 45px;
+  margin: 0;
 }

@@ -1,30 +1,34 @@
 const TodoInput = ({
   todo,
   setTodo,
-  addTodo,
+  handleAddTodo,
   isEdit,
-  taskIndex,
-  editTodo,
+  handleEditTodo,
   todos,
 }) => {
+  const handleChange = (event) => {
+    setTodo({ ...todo, text: event.target.value });
+  };
+
   return (
-    <div className='input-wrapper'>
+    <div className='create-input-wrapper'>
       <input
+        className='create-input'
         type='text'
         name='todo'
         placeholder='create todo'
-        value={todo}
-        onChange={(e) => setTodo(e.target.value)}
+        value={todo.text}
+        onChange={handleChange}
       />
       {!isEdit && (
-        <button className='add-button' onClick={addTodo}>
+        <button className='add-button' onClick={handleAddTodo}>
           Add
         </button>
       )}
       {isEdit && (
         <button
           className='add-button'
-          onClick={() => editTodo(todo, taskIndex, todos)}
+          onClick={() => handleEditTodo(todo, todos)}
         >
           Edit
         </button>
