@@ -75,6 +75,12 @@ button {
   border-left: none;
 }
 
+.items-delete {
+  width: auto;
+  color: rgb(45, 44, 44);
+  background: #c692e7;
+  border-radius: 0.5rem;
+}
 .item--delete {
   color: #fe6a6a;
 }

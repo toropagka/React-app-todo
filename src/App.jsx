@@ -12,6 +12,22 @@ const App = () => {
 
   const [todos, setTodos] = useState([]);
   const [isEdit, setIsEdit] = useState(false);
+  const [selectedItems, setSelectedItems] = useState([]);
+
+  const handleBulkDeletion = () => {
+    const newTodos = todos.filter((todo) => !selectedItems.includes(todo.id));
+
+    setTodos(newTodos);
+    setSelectedItems([]);
+  };
+
+  const handleCheckTodo = (event, id) => {
+    if (event.target.checked) {
+      setSelectedItems([...selectedItems, id]);
+    } else {
+      setSelectedItems(selectedItems.filter((item) => item !== id));
+    }
+  };
 
   const handleAddTodo = () => {
     if (todo?.text?.length) {
@@ -81,6 +97,9 @@ const App = () => {
         handleDeleteTodo={handleDeleteTodo}
         handleEditText={handleEditText}
         handleOnChange={handleOnChange}
+        handleBulkDeletion={handleBulkDeletion}
+        handleCheckTodo={handleCheckTodo}
+        selectedItems={selectedItems}
       />
     </div>
   );
